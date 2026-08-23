@@ -1,8 +1,6 @@
 {
   "dependencies": {
-    "cheerio": "^1.2.0",
     "express": "^5.2.1",
-    "http-proxy-middleware": "^4.2.0",
-    "playwright": "^1.62.1"
+    "http-proxy-middleware": "^4.2.0"
   }
 }
