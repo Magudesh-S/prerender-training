@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+
+User-agent: GPTBot
+Disallow: /drafts/
+
+Sitemap: http://localhost:3000/sitemap.xml

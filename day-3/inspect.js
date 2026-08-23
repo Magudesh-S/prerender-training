@@ -1,7 +1,7 @@
 import * as cheerio from "cheerio";
 
 async function inspect(){
-    const response = await fetch("http://127.0.0.1:3000/store.html");
+    const response = await fetch("https://www.google.com/");
     const html = await response.text();
     const $ = cheerio.load(html);
     // console.log($());
