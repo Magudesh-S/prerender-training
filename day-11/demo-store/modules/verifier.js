@@ -1,9 +1,9 @@
 // verifier.js
 'use strict';
 
-const { classifyUA } = require('./classify');
-const { ipInRanges, getRanges } = require('./ranges'); 
-const { verifyByDNS } = require('./verify-dns'); 
+import { classifyUA } from "./classify.js";
+import { ipInRanges, getRanges } from "./ranges.js";
+import { verifyByDNS } from "./verify-dns.js";
 
 const BOT_CONFIG = {
   googlebot: { method: 'dns', suffixes: ['.googlebot.com', '.google.com'] },
@@ -81,4 +81,4 @@ async function isVerifiedBot(uaString, ip) {
   return result;
 }
 
-module.exports = { isVerifiedBot, BOT_CONFIG };
+export { isVerifiedBot, BOT_CONFIG };

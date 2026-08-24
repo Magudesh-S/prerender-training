@@ -45,7 +45,7 @@
  * suffix (or an exact match) — see hasAllowedSuffix() below.
  */
 
-const dns = require("dns").promises;
+import { promises as dns } from "dns";
 
 /**
  * Strip a trailing dot (some DNS libraries/zones return FQDNs with a
@@ -129,18 +129,6 @@ async function verifyByDNS(ip, allowedSuffixes) {
   return false;
 }
 
-module.exports = { verifyByDNS, hasAllowedSuffix };
+export { verifyByDNS, hasAllowedSuffix };
 
 // Standalone usage: node verify-dns.js <ip>
-if (require.main === module) {
-  const ip = process.argv[2];
-  if (!ip) {
-    console.error("Usage: node verify-dns.js <ip>");
-    process.exit(1);
-  }
-  verifyByDNS(ip, ["googlebot.com", "google.com", "googleusercontent.com"]).then(
-    (result) => {
-      console.log(`verifyByDNS(${ip}) -> ${result}`);
-    }
-  );
-}

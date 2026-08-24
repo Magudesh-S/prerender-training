@@ -40,4 +40,4 @@ function classifyUA(uaString) {
   return null;
 }
 
-module.exports = { classifyUA };
+export { classifyUA };
