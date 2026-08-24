@@ -23,4 +23,5 @@ https://techcrunch.com/
 https://www.nytimes.com/
 https://www.thehindu.com/
 https://indianexpress.com/
-https://www.airbnb.com/
+https://www.airbnb.com/  
+http://localhost:5173

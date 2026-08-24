@@ -1,6 +1,28 @@
 {
   "dependencies": {
+    "cheerio": "^1.2.0",
     "express": "^5.2.1",
-    "http-proxy-middleware": "^4.2.0"
-  }
+    "http-proxy-middleware": "^4.2.0",
+    "ipaddr.js": "^2.5.0",
+    "playwright": "^1.62.1"
+  },
+  "name": "prerender-training",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Magudesh-S/prerender-training.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Magudesh-S/prerender-training/issues"
+  },
+  "homepage": "https://github.com/Magudesh-S/prerender-training#readme"
 }
