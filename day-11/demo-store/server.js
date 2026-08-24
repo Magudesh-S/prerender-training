@@ -78,8 +78,8 @@ app.use(async (req, res, next) => {
     const botClassification = classifyUA(userAgent);
 
     const uaClassification = botClassification || "human";
+const verificationResult = await isVerifiedBot(userAgent, ip);
 
-    let verificationResult;
 
     try {
 
@@ -96,11 +96,6 @@ app.use(async (req, res, next) => {
             method: "..."
         }
         */
-
-        verificationResult = await isVerifiedBot(
-            userAgent,
-            ip
-        );
 
 
         /*
@@ -121,7 +116,9 @@ app.use(async (req, res, next) => {
 
 
         const verified =
-            verificationResult.verified || testBypass;
+         botClassification !== null &&
+    (verificationResult.verified || testBypass);
+
 
 
         /*
@@ -147,14 +144,14 @@ app.use(async (req, res, next) => {
                 //     `${ms}ms`
                 // );
 
-                console.log(
-                  `${new Date().toISOString()} ` +
-                  `${req.originalUrl} ` +
-                  `ua=${uaClassification} ` +
-                  `verified=true ` +
-                  `bot-cache-HIT ` +
-                  `${ms}ms`
-                );
+            console.log(
+                `${new Date().toISOString()} ` +
+                `${req.originalUrl} ` +
+                `ua=${uaClassification} ` +
+                `verified=false ` +
+                `proxied-human ` +
+                `${ms}ms`
+            );
 
             });
 

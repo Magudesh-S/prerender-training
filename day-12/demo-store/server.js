@@ -7,7 +7,7 @@ import { isVerifiedBot } from "./modules/verifier.js";
 import { classifyUA } from "./modules/classify.js";
 
 
-const app = express();
+const app = express(); // Backend express.js init (FastAPI)
 
 const PORT =
   process.env.PORT || 3000;
@@ -27,7 +27,7 @@ const TEST_ALLOW_IPS = new Set(
 
 /**
  * ========================================================
- * CLEAN IP
+ * CLEAN IP change ipv6 to ipv4 and correct ip's 
  * ========================================================
  */
 function cleanIp(ip = "") {
@@ -98,7 +98,7 @@ app.use(
 
     const ip =
       cleanIp(req.ip);
-
+    // console.log(ip);
 
     const botClassification =
       classifyUA(userAgent);
@@ -110,11 +110,7 @@ app.use(
 
     try {
 
-      /**
-       * ==================================================
-       * VERIFY BOT
-       * ==================================================
-       */
+
       const verificationResult =
         await isVerifiedBot(
           userAgent,
@@ -122,11 +118,7 @@ app.use(
         );
 
 
-      /**
-       * ==================================================
-       * LOCAL TEST BYPASS
-       * ==================================================
-       */
+
       const testBypass =
         botClassification !== null &&
         TEST_ALLOW_IPS.has(ip);
@@ -227,13 +219,12 @@ app.use(
 
 
         console.log(
-          `${new Date().toISOString()} ` +
-          `${req.originalUrl} ` +
-          `ua=${uaClassification} ` +
-          `verified=true ` +
-          `bot-cache-${cacheResult.status} ` +
-          `status=${cacheResult.statusCode ?? 200} ` +
-          `${ms}ms`
+            `${new Date().toISOString()} ` +
+            `${req.originalUrl} ` +
+            `ua=${uaClassification} ` +
+            `verified=true ` +
+            `bot-cache-HIT ` +
+            `${ms}ms`
         );
 
 
@@ -316,15 +307,14 @@ app.use(
         );
 
 
-      console.log(
-        `${new Date().toISOString()} ` +
-        `${req.originalUrl} ` +
-        `ua=${uaClassification} ` +
-        `verified=true ` +
-        `bot-MISS-with-render ` +
-        `status=${rendered.statusCode} ` +
-        `${ms}ms`
-      );
+            console.log(
+            `${new Date().toISOString()} ` +
+            `${req.originalUrl} ` +
+            `ua=${uaClassification} ` +
+            `verified=true ` +
+            `bot-MISS-with-render ` +
+            `${ms}ms`
+            );
 
 
       /**

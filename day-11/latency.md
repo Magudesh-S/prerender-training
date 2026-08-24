@@ -1,4 +1,14 @@
 # Day 11 — Latency Measurements
+2026-08-24T07:46:44.567Z / ua=human verified=true bot-cache-HIT 12ms
+2026-08-24T07:46:44.578Z / ua=human verified=true bot-cache-HIT 4ms
+2026-08-24T07:46:44.588Z / ua=human verified=true bot-cache-HIT 3ms
+2026-08-24T07:46:44.599Z / ua=human verified=true bot-cache-HIT 3ms
+2026-08-24T07:46:44.610Z / ua=human verified=true bot-cache-HIT 3ms
+2026-08-24T07:46:44.622Z / ua=human verified=true bot-cache-HIT 3ms
+2026-08-24T07:46:44.633Z / ua=human verified=true bot-cache-HIT 3ms
+2026-08-24T07:46:44.643Z / ua=human verified=true bot-cache-HIT 3ms
+2026-08-24T07:46:44.655Z / ua=human verified=true bot-cache-HIT 4ms
+2026-08-24T07:46:44.666Z / ua=human verified=true bot-cache-HIT 3ms
 
 ## Test environment
 
