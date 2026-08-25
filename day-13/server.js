@@ -8,7 +8,7 @@ import { classifyUA } from "./demo-store/modules/classify.js";
 const app = express();
 
 const PORT = 3000;
-const ORIGIN = "http://127.0.0.1:5173";
+const ORIGIN = "http://127.0.0.1:4173";
 
 // Normal visitors → Vite
 const viteProxy = createProxyMiddleware({
@@ -99,9 +99,9 @@ app.use(async (req, res, next) => {
   }
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, "127.0.0.1", () => {
   console.log(
-    `Prerender server running at http://localhost:${PORT}`
+    `Prerender server running at http://127.0.0.1:${PORT}`
   );
 
   console.log(
