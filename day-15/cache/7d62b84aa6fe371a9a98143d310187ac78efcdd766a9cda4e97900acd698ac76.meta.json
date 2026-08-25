@@ -1,0 +1,5 @@
+{
+  "url": "http://127.0.0.1:5174/product/does-not-exist",
+  "renderedAt": "2026-08-25T18:26:13.646Z",
+  "statusCode": 404
+}
