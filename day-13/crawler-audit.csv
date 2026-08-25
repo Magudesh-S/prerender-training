@@ -1,0 +1,3 @@
+url,raw_words,rendered_words,score,jsonld_in_raw,jsonld_types,canonical_present,render_ms
+"http://localhost:5173/",0,20,0,false,"",false,602
+"http://localhost:3000/",20,20,1,true,"Product",true,625
