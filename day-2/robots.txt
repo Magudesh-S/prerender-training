@@ -6,4 +6,4 @@ Disallow: /admin/
 User-agent: GPTBot
 Disallow: /drafts/
 
-Sitemap: http://localhost:3000/sitemap.xml
+Sitemap: http://localhost:5500/sitemap.xml
